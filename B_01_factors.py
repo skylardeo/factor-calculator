@@ -1,7 +1,4 @@
 # Generates headings (eg: ---- Heading ----)
-from C_02_factors_int_checker import to_factor
-
-
 def statement_generator(statement, decoration):
     print(f"\n{decoration * 5} {statement} {decoration * 5}")
 
@@ -47,25 +44,30 @@ def num_check(question):
 # Works out factors, returns sorted list
 def factor(var_to_factor):
     factors_list = []
+    # to_factor = num_check("To factor: ")
 
     # square root the number to work out when to stop looping.
-    stop =
+    stop = to_factor ** 0.5
     stop = int(stop)
 
-    for item in
+    for item in range(1, stop + 1):
 
         # check to see if the item is a factor
-        if to_factor
+        if to_factor % item == 0:
+            factors_list.append(item)
 
             # Calculate partner
-            partner =
+            partner = to_factor // item
 
-            # Add partner to the list (but prevent duplicate entries)
-            if partner ==
+            # add partner to the list (but prevent duplicates)
+            if partner not in factors_list:
+                factors_list.append(partner)
 
     # return the sorted list
     factors_list.sort()
     return factors_list
+
+
 
 # Main Routine Goes Here
 
@@ -83,7 +85,7 @@ if want_instructions == "":
         comment = ""
 
         # ask user for number to be factorised
-        to_factor = num_check("\nEnter an integer (or xxx to quit: ")
+        to_factor = num_check("\nTo factor? (or xxx to quit: ")
 
         if to_factor == "xxx":
             break
@@ -105,10 +107,12 @@ if want_instructions == "":
 
         # check if the list has an odd number of factors
         elif len(all_factors) % 2 == 1:
-            comment = f"Factors of {to_factor} is a perfect square"
+            comment = f"{to_factor} is a perfect square"
 
         # Set up headings
         if to_factor > 1:
+            heading = f"Factors of {to_factor}"
+        else:
             heading = "One is special..."
 
         # output factors and comment
