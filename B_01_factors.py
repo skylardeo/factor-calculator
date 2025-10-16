@@ -27,9 +27,12 @@ def num_check(question):
     error = "Please enter a number between 1 and 200\n"
     while True:
 
+        response = input(question).lower()
+        if response == "xxx":
+            return response
         try:
             #ask the user for a number
-            response = float(input(question))
+            response = int(response)
 
             # check that the number is more than zero
             if response > 0:
