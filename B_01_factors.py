@@ -50,7 +50,7 @@ def factor(var_to_factor):
     # to_factor = num_check("To factor: ")
 
     # square root the number to work out when to stop looping.
-    stop = to_factor ** 0.5
+    stop = var_to_factor ** 0.5
     stop = int(stop)
 
     for item in range(1, stop + 1):
@@ -59,7 +59,7 @@ def factor(var_to_factor):
         if to_factor % item == 0:
             factors_list.append(item)
 
-            # Calculate partner
+            # calculate partner
             partner = to_factor // item
 
             # add partner to the list (but prevent duplicates)
@@ -83,34 +83,34 @@ want_instructions = input("\nPress <enter> to read the instructions "
 if want_instructions == "":
     instructions()
 
-    while True:
+while True:
 
-        comment = ""
+    comment = ""
 
-        # ask user for number to be factorised
-        to_factor = num_check("\nTo factor? (or xxx to quit: ")
+    # ask user for number to be factorised
+    to_factor = num_check("\nTo factor? (or xxx to quit: ")
 
-        if to_factor == "xxx":
-            break
+    if to_factor == "xxx":
+        break
 
-        # get factors for integers that are 2 or more
-        elif to_factor != 1:
-            all_factors = factor(to_factor)
+    # get factors for integers that are 2 or more
+    elif to_factor != 1:
+        all_factors = factor(to_factor)
 
-        # Set up comment for unity
-        else:
-            all_factors = ""
-            comment = "One is UNITY! It only has one factor. Itself :)"
+    # Set up comment for unity
+    else:
+        all_factors = ""
+        comment = "One is UNITY! It only has one factor. Itself :)"
 
-        # comments for squares / primes
+    # comments for squares / primes
 
-        # Prime numbers have only two factors
-        if len(all_factors) == 2:
-            comment = f"{to_factor} is a prime number"
+    # Prime numbers have only two factors
+    if len(all_factors) == 2:
+        comment = f"{to_factor} is a prime number"
 
-        # check if the list has an odd number of factors
-        elif len(all_factors) % 2 == 1:
-            comment = f"{to_factor} is a perfect square"
+    # check if the list has an odd number of factors
+    elif len(all_factors) % 2 == 1:
+        comment = f"{to_factor} is a perfect square"
 
         # Set up headings
         if to_factor > 1:
