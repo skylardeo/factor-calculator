@@ -112,16 +112,16 @@ while True:
     elif len(all_factors) % 2 == 1:
         comment = f"{to_factor} is a perfect square"
 
-        # Set up headings
-        if to_factor > 1:
-            heading = f"Factors of {to_factor}"
-        else:
-            heading = "One is special..."
+    # Set up headings
+    if to_factor > 1:
+        heading = f"Factors of {to_factor}"
+    else:
+        heading = "One is special..."
 
-        # output factors and comment
-        print()
-        statement_generator(heading, "*")
-        print(all_factors)
-        print(comment)
+    # output factors and comment
+    print()
+    statement_generator(heading, "*")
+    print(all_factors)
+    print(comment)
 
     print("Thank you for using the factors calculator")
