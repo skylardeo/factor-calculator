@@ -35,7 +35,7 @@ def num_check(question):
             response = int(response)
 
             # check that the number is more than zero
-            if response > 0:
+            if 1 <= response <=200:
                 return response
             else:
                 print(error)
